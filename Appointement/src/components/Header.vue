@@ -1,27 +1,38 @@
 <script setup></script>
 
 <template>
-   <header class="head">
-    <div class="part">
-      <span class="font-bold italic">File Facile</span>
-    </div>
+  <header class="head">
     <div class="text-gray-700 text-md">
-      <ul class="menu flex justify-start space-x-6 ">
-        <li class="px-1 border-b-2 border-transparent hover:border-green-400 duration-300">
-          <router-link :to="{ name:'home' }" class="text-gray-700 text-md">Accueil</router-link>
-        </li>
-      </ul>
-      <ul class="menu flex justify-end space-x-6">
-        <li class="px-1 border-b-2 border-transparent hover:border-green-400 duration-300">
-          <router-link :to="{ name:'singup' }" class="text-gray-700 text-md">Inscription</router-link>
-        </li>
-        <li class="px-1 border-b-2 border-transparent hover:border-green-400 duration-300">
-          <router-link :to="{ name:'login' }" class="text-gray-700 text-md">Connexion</router-link>
-        </li>
-      </ul>
+      <div class="flex justify-between items-end">
+        <div class="flex items-end">
+          <input
+            type="text"
+            class="border border-gray-300 rounded-lg px-2 py-2 mr-4"
+            placeholder="Rechercher..."
+          />
+          <div class="menu flex justify-between space-x-6">
+            <p>Bienvenu sur wayi</p>
+            <router-link to="/signup">
+            <button
+              class="btn-logout"
+            >
+              Inscription
+            </button>
+          </router-link>
+            <router-link to="/dashAdmin">
+            <button
+              class="btn-logout"
+            >
+              Get Started
+            </button>
+          </router-link>
+            <button class="btn-logout">Logout</button>
+          </div>
+        
+        </div>
+        </div>
     </div>
   </header>
-
 </template>
 
 <style scoped>
@@ -44,18 +55,25 @@
 .your {
   text-decoration-color: #15803d;
 }
-.part {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
+
 .head {
   width: 100%;
-  height: 6rem;
+  height: 4rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0/ 0.1);
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
   padding-left: 6rem;
   padding-right: 6rem;
+}
+
+.btn-logout {
+  padding: 0.5rem 0.5rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-align: end;
 }
 </style>
